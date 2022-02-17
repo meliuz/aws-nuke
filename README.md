@@ -11,6 +11,15 @@ Remove all resources from an AWS account.
 resources are covered by it. Be encouraged to add missing resources and create
 a Pull Request or to create an [Issue](https://github.com/rebuy-de/aws-nuke/issues/new).
 
+## Cleaning Sandbox
+Step-by-step to clear sandbox resources
+0. Adjust region, account and filters for sandbox
+> edit config/sandbox.yaml
+1. Access aws-nuke docker image
+> make shell
+2. Remove resources
+> aws-nuke -c config/sandbox.yaml --no-dry-run > output/OUTPUTLOG.txt
+
 ## Caution!
 
 Be aware that *aws-nuke* is a very destructive tool, hence you have to be very

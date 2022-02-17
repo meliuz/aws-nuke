@@ -1,0 +1,40 @@
+---
+regions:
+- "global" # This is for all global resource types e.g. IAM
+# - "sa-east-1" # sp
+# - "us-east-1" # virginia
+# - "us-east-2" # ohio
+
+
+account-blocklist:
+- 1234567890
+
+# optional: restrict nuking to these resources
+# resource-types:
+#   targets:
+#   - IAMUser
+#   - IAMUserPolicyAttachment
+#   - IAMUserAccessKey
+#   - S3Bucket
+#   - S3Object
+#   - Route53HostedZone
+#   - EC2Instance
+#   - CloudFormationStack
+#   - MSKCluster
+
+accounts:
+  103334327501:
+    filters:
+      IAMUser:
+      - "infra-nuke"
+      IAMUserPolicyAttachment:
+      - property: UserName
+        value: "infra-nuke"
+      IAMUserAccessKey:
+      - property: UserName
+        value: "infra-nuke"
+      IAMRole:
+      - "MeliuzSandboxCrossAccountAdmin"
+      IAMRolePolicyAttachment:
+      - property: RoleName
+        value: "MeliuzSandboxCrossAccountAdmin"
