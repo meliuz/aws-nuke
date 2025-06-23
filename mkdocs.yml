@@ -1,0 +1,6 @@
+---
+site_name: aws-nuke
+nav:
+  - Home: README.md
+plugins:
+  - techdocs-core
